@@ -1,13 +1,21 @@
 package codekata;
 
 class Solution3 {
-    public int solution(int num1, int num2) {
-        boolean val = (0<=num1 && num1<=10000 && 0<=num2 && num2 <=10000);
-        int answer = 0;
+    // 숫자 비교하기
+//    public int solution(int num1, int num2) {
+//        boolean val = (0<=num1 && num1<=10000 && 0<=num2 && num2 <=10000);
+//        int answer = 0;
+//
+//        if(val){
+//            answer=(num1==num2)? 1: -1;
+//        }
+//        return answer;
+//    }
 
-        if(val){
-            answer=(num1==num2)? 1: -1;
+    // 두 수의 합
+    static class Solution {
+        public int solution(int num1, int num2) {
+            int answer = num1 + num2;
+            return answer;
         }
-        return answer;
     }
-}
