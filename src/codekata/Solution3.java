@@ -28,18 +28,32 @@ class Solution3 {
 //    }
 
     // 짝수의 합
+//    static class Solution {
+//        public int solution(int n) {
+//            int answer = 0;
+//            for (int i = 0; i <= n; i++){
+//                if (i % 2 == 0){
+//                    answer += i;
+//                } else {
+//
+//                }
+//            }
+//            return answer;
+//        }
+//    }
+    // 배열의 평균값
     static class Solution {
-        public int solution(int n) {
-            int answer = 0;
-            for (int i = 0; i <= n; i++){
-                if (i % 2 == 0){
-                    answer += i;
-                } else {
+        public double solution(int[] numbers) {
+            double answer = 0;
 
-                }
+            int sum = 0;
+            for(int i: numbers){
+                sum+=i;
             }
+            answer = sum/(double)numbers.length;
             return answer;
         }
     }
 }
+
 
