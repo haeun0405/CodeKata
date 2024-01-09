@@ -20,23 +20,11 @@ class Solution3 {
 //        }
 //    }
     // 두 수의 나눗셈
-//    static class Solution {
-//        public int solution(int num1, int num2) {
-//            double result = (double) num1 / (double) num2;
-//            return (int) (result * 1000);
-//        }
-//    }
-//}
-    // 각도기
     static class Solution {
-        public int solution(int angle) {
-            int answer = 0;
-            if (angle <= 90) {
-                answer = angle / 90 + 1;
-            } else {
-                answer = (int) Math.ceil(((double) angle + 0.1) / 90) + 1;
-            }
-            return answer;
+        public int solution(int num1, int num2) {
+            double result = (double) num1 / (double) num2;
+            return (int) (result * 1000);
         }
     }
 }
+
