@@ -20,10 +20,25 @@ class Solution3 {
 //        }
 //    }
     // 두 수의 나눗셈
+//    static class Solution {
+//        public int solution(int num1, int num2) {
+//            double result = (double) num1 / (double) num2;
+//            return (int) (result * 1000);
+//        }
+//    }
+
+    // 짝수의 합
     static class Solution {
-        public int solution(int num1, int num2) {
-            double result = (double) num1 / (double) num2;
-            return (int) (result * 1000);
+        public int solution(int n) {
+            int answer = 0;
+            for (int i = 0; i <= n; i++){
+                if (i % 2 == 0){
+                    answer += i;
+                } else {
+
+                }
+            }
+            return answer;
         }
     }
 }
