@@ -42,16 +42,35 @@ class Solution3 {
 //        }
 //    }
     // 배열의 평균값
-    static class Solution {
-        public double solution(int[] numbers) {
-            double answer = 0;
-
-            int sum = 0;
-            for(int i: numbers){
-                sum+=i;
+//    static class Solution {
+//        public double solution(int[] numbers) {
+//            double answer = 0;
+//
+//            int sum = 0;
+//            for(int i: numbers){
+//                sum+=i;
+//            }
+//            answer = sum/(double)numbers.length;
+//            return answer;
+//        }
+//    }
+    // 짝수와 홀수
+    public static class Solution {
+        public String solution(int num) {
+            // 2로 나누어 떨어지면 짝수, 그렇지 않으면 홀수
+            if (num % 2 == 0) {
+                return "Even";
+            } else {
+                return "Odd";
             }
-            answer = sum/(double)numbers.length;
-            return answer;
+        }
+
+        public static void main(String[] args) {
+            Solution sol = new Solution();
+
+            // 테스트
+            System.out.println(sol.solution(3)); // "Odd"
+            System.out.println(sol.solution(4)); // "Even"
         }
     }
 }
