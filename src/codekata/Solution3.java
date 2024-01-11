@@ -73,7 +73,7 @@ class Solution3 {
 //            System.out.println(sol.solution(4)); // "Even"
 //        }
 //    }
-    // 배열의 평균값
+    // 평균 구하기
     public static class Solution {
         public double solution(int[] arr) {
             double sum = 0;
