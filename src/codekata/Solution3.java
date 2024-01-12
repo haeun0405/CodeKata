@@ -74,25 +74,44 @@ class Solution3 {
 //        }
 //    }
     // 평균 구하기
-    public static class Solution {
-        public double solution(int[] arr) {
-            double sum = 0;
+//    public static class Solution {
+//        public double solution(int[] arr) {
+//            double sum = 0;
+//
+//            // 배열의 모든 요소를 더하기
+//            for (int num : arr) {
+//                sum += num;
+//            }
+//
+//            // 평균값 계산
+//            return sum / arr.length;
+//        }
+//
+//        public static void main(String[] args) {
+//            Solution sol = new Solution();
+//
+//            // 테스트
+//            System.out.println(sol.solution(new int[]{1, 2, 3, 4})); // 2.5
+//            System.out.println(sol.solution(new int[]{5, 5})); // 5.0
+//        }
+//    }
+    // 자릿수 더하기
 
-            // 배열의 모든 요소를 더하기
-            for (int num : arr) {
-                sum += num;
+    public static class Solution {
+        public int solution(int n) {
+            int answer = 0;
+
+            while(true){
+                answer+=n%10;
+                if(n<10)
+                    break;
+
+                n=n/10;
             }
 
-            // 평균값 계산
-            return sum / arr.length;
-        }
+            System.out.println("Hello Java");
 
-        public static void main(String[] args) {
-            Solution sol = new Solution();
-
-            // 테스트
-            System.out.println(sol.solution(new int[]{1, 2, 3, 4})); // 2.5
-            System.out.println(sol.solution(new int[]{5, 5})); // 5.0
+            return answer;
         }
     }
 }
