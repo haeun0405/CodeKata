@@ -97,23 +97,47 @@ class Solution3 {
 //    }
     // 자릿수 더하기
 
-    public static class Solution {
-        public int solution(int n) {
-            int answer = 0;
+//    public static class Solution {
+//        public int solution(int n) {
+//            int answer = 0;
+//
+//            while(true){
+//                answer+=n%10;
+//                if(n<10)
+//                    break;
+//
+//                n=n/10;
+//            }
+//
+//            System.out.println("Hello Java");
+//
+//            return answer;
+//        }
+//    }
+    // 약수의 합
+public static class Solution {
+    public int solution(int n) {
+        int sum = 0;
 
-            while(true){
-                answer+=n%10;
-                if(n<10)
-                    break;
-
-                n=n/10;
+        // 1부터 n까지의 모든 숫자를 확인하여 약수를 찾는다.
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                sum += i; // 약수를 찾으면 합에 추가
             }
-
-            System.out.println("Hello Java");
-
-            return answer;
         }
+
+        return sum;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        // 테스트
+        System.out.println(sol.solution(12));
+        System.out.println(sol.solution(5));
+    }
+}
+
 }
 
 
