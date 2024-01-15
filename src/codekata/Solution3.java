@@ -115,29 +115,38 @@ class Solution3 {
 //        }
 //    }
     // 약수의 합
-public static class Solution {
-    public int solution(int n) {
-        int sum = 0;
+//public static class Solution {
+//    public int solution(int n) {
+//        int sum = 0;
+//
+//        // 1부터 n까지의 모든 숫자를 확인하여 약수를 찾는다.
+//        for (int i = 1; i <= n; i++) {
+//            if (n % i == 0) {
+//                sum += i; // 약수를 찾으면 합에 추가
+//            }
+//        }
+//
+//        return sum;
+//    }
+//
+//    public static void main(String[] args) {
+//        Solution sol = new Solution();
+//
+//        // 테스트
+//        System.out.println(sol.solution(12));
+//        System.out.println(sol.solution(5));
+//    }
 
-        // 1부터 n까지의 모든 숫자를 확인하여 약수를 찾는다.
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                sum += i; // 약수를 찾으면 합에 추가
+    // 나머지가 1이 되는 수 찾기
+
+        public int solution3 (int n) {
+            int answer = 1;
+
+            while(n % answer != 1){
+                answer++;
             }
+            return answer;
         }
-
-        return sum;
-    }
-
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-
-        // 테스트
-        System.out.println(sol.solution(12));
-        System.out.println(sol.solution(5));
-    }
-}
-
 }
 
 
