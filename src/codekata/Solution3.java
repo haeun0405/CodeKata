@@ -139,14 +139,29 @@ class Solution3 {
 
     // 나머지가 1이 되는 수 찾기
 
-        public int solution3 (int n) {
-            int answer = 1;
+//        public int solution3 (int n) {
+//            int answer = 1;
+//
+//            while(n % answer != 1){
+//                answer++;
+//            }
+//            return answer;
+//        }
 
-            while(n % answer != 1){
-                answer++;
+    // x만큼 간격이 있는 n개의 숫자
+    static class Solution {
+        public long[] solution(int x, int n) {
+            long[] answer = new long[n];
+            long sum = 0;
+            for(int i = 0;i<answer.length;i++){
+                sum += x;
+                answer[i] = sum;
             }
+
+
             return answer;
         }
+    }
 }
 
 
