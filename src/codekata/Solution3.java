@@ -177,10 +177,25 @@ class Solution3 {
 //        }
 //    }
     // 문자열을 정수로 바꾸기
+//    static class Solution {
+//        public int solution(String s) {
+//            String answer = s;
+//            return Integer.parseInt(answer);
+//        }
+//    }
+    // 정수 제곱근 판별
     static class Solution {
-        public int solution(String s) {
-            String answer = s;
-            return Integer.parseInt(answer);
+        public long solution(long n) {
+            long answer = 0;
+
+            for (long i = 1; i <= n; i++) {
+                if (i * i == n) {
+                    answer = (i + 1) * (i + 1);
+                    break;
+                }
+                else answer = -1;
+            }
+            return answer;
         }
     }
 
