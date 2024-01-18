@@ -1,5 +1,8 @@
 package codekata;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 class Solution3 {
     // 숫자 비교하기
 //    public int solution(int num1, int num2) {
@@ -184,19 +187,46 @@ class Solution3 {
 //        }
 //    }
     // 정수 제곱근 판별
-    static class Solution {
-        public long solution(long n) {
-            long answer = 0;
+//    static class Solution {
+//        public long solution(long n) {
+//            long answer = 0;
+//
+//            for (long i = 1; i <= n; i++) {
+//                if (i * i == n) {
+//                    answer = (i + 1) * (i + 1);
+//                    break;
+//                }
+//                else answer = -1;
+//            }
+//            return answer;
+//        }
+//    }
 
-            for (long i = 1; i <= n; i++) {
-                if (i * i == n) {
-                    answer = (i + 1) * (i + 1);
-                    break;
-                }
-                else answer = -1;
+    // 정수 내림차순으로 배치하기
+    public static class Solution {
+        public long solution(long n) {
+            // 정수 n을 문자열로 변환
+            String str = Long.toString(n);
+
+            // 문자열을 문자 배열로 변환
+            Character[] chars = new Character[str.length()];
+            for (int i = 0; i < str.length(); i++) {
+                chars[i] = str.charAt(i);
             }
-            return answer;
+
+            // 내림차순으로 정렬
+            Arrays.sort(chars, Collections.reverseOrder());
+
+            // 정렬된 문자 배열을 문자열로 다시 조합
+            StringBuilder sb = new StringBuilder(chars.length);
+            for (Character c : chars) {
+                sb.append(c);
+            }
+
+            // 문자열을 정수로 변환하여 반환
+            return Long.parseLong(sb.toString());
         }
+
     }
 
 }
