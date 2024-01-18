@@ -203,30 +203,55 @@ class Solution3 {
 //    }
 
     // 정수 내림차순으로 배치하기
+//    public static class Solution {
+//        public long solution(long n) {
+//            // 정수 n을 문자열로 변환
+//            String str = Long.toString(n);
+//
+//            // 문자열을 문자 배열로 변환
+//            Character[] chars = new Character[str.length()];
+//            for (int i = 0; i < str.length(); i++) {
+//                chars[i] = str.charAt(i);
+//            }
+//
+//            // 내림차순으로 정렬
+//            Arrays.sort(chars, Collections.reverseOrder());
+//
+//            // 정렬된 문자 배열을 문자열로 다시 조합
+//            StringBuilder sb = new StringBuilder(chars.length);
+//            for (Character c : chars) {
+//                sb.append(c);
+//            }
+//
+//            // 문자열을 정수로 변환하여 반환
+//            return Long.parseLong(sb.toString());
+//        }
+//
+//    }
     public static class Solution {
-        public long solution(long n) {
-            // 정수 n을 문자열로 변환
-            String str = Long.toString(n);
+        public boolean solution(int x) {
+            int sumOfDigits = 0;
+            int originalNumber = x;
 
-            // 문자열을 문자 배열로 변환
-            Character[] chars = new Character[str.length()];
-            for (int i = 0; i < str.length(); i++) {
-                chars[i] = str.charAt(i);
+            // 각 자릿수의 합을 계산
+            while (x > 0) {
+                sumOfDigits += x % 10;
+                x /= 10;
             }
 
-            // 내림차순으로 정렬
-            Arrays.sort(chars, Collections.reverseOrder());
-
-            // 정렬된 문자 배열을 문자열로 다시 조합
-            StringBuilder sb = new StringBuilder(chars.length);
-            for (Character c : chars) {
-                sb.append(c);
-            }
-
-            // 문자열을 정수로 변환하여 반환
-            return Long.parseLong(sb.toString());
+            // 원래 숫자가 자릿수의 합으로 나누어 떨어지는지 확인
+            return originalNumber % sumOfDigits == 0;
         }
 
+        public static void main(String[] args) {
+            Solution sol = new Solution();
+
+            // 테스트
+            System.out.println(sol.solution(10)); // true
+            System.out.println(sol.solution(12)); // true
+            System.out.println(sol.solution(11)); // false
+            System.out.println(sol.solution(13)); // false
+        }
     }
 
 }
