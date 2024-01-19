@@ -228,29 +228,47 @@ class Solution3 {
 //        }
 //
 //    }
-    public static class Solution {
-        public boolean solution(int x) {
-            int sumOfDigits = 0;
-            int originalNumber = x;
+    // 하샤드 수
+//    public static class Solution {
+//        public boolean solution(int x) {
+//            int sumOfDigits = 0;
+//            int originalNumber = x;
+//
+//            // 각 자릿수의 합을 계산
+//            while (x > 0) {
+//                sumOfDigits += x % 10;
+//                x /= 10;
+//            }
+//
+//            // 원래 숫자가 자릿수의 합으로 나누어 떨어지는지 확인
+//            return originalNumber % sumOfDigits == 0;
+//        }
+//
+//        public static void main(String[] args) {
+//            Solution sol = new Solution();
+//
+//            // 테스트
+//            System.out.println(sol.solution(10)); // true
+//            System.out.println(sol.solution(12)); // true
+//            System.out.println(sol.solution(11)); // false
+//            System.out.println(sol.solution(13)); // false
+//        }
+//    }
+    // 두 정수 사이의 값
+    static class Solution {
+        public long solution(int a, int b) {
+            long answer = 0;
 
-            // 각 자릿수의 합을 계산
-            while (x > 0) {
-                sumOfDigits += x % 10;
-                x /= 10;
+            if (a < b) {
+                for (int i = a; i <= b; i++) {
+                    answer += i;
+                }
+            } else {
+                for (int i = b; i <= a; i++) {
+                    answer += i;
+                }
             }
-
-            // 원래 숫자가 자릿수의 합으로 나누어 떨어지는지 확인
-            return originalNumber % sumOfDigits == 0;
-        }
-
-        public static void main(String[] args) {
-            Solution sol = new Solution();
-
-            // 테스트
-            System.out.println(sol.solution(10)); // true
-            System.out.println(sol.solution(12)); // true
-            System.out.println(sol.solution(11)); // false
-            System.out.println(sol.solution(13)); // false
+            return answer;
         }
     }
 
