@@ -255,20 +255,41 @@ class Solution3 {
 //        }
 //    }
     // 두 정수 사이의 값
+//    static class Solution {
+//        public long solution(int a, int b) {
+//            long answer = 0;
+//
+//            if (a < b) {
+//                for (int i = a; i <= b; i++) {
+//                    answer += i;
+//                }
+//            } else {
+//                for (int i = b; i <= a; i++) {
+//                    answer += i;
+//                }
+//            }
+//            return answer;
+//        }
+//    }
+    // 콜라츠 추측
     static class Solution {
-        public long solution(int a, int b) {
-            long answer = 0;
+        public int solution(int num) {
+            int maxCount = 500;
+            int i = 0;
+            double tempNum = num;
+            while(i <= 500) {
+                if(tempNum ==1) {
+                    return i;
+                }
+                else if(tempNum%2 == 0) {
+                    tempNum = tempNum/2;
+                }else {
+                    tempNum = tempNum*3 +1;
+                }
+                i++;
 
-            if (a < b) {
-                for (int i = a; i <= b; i++) {
-                    answer += i;
-                }
-            } else {
-                for (int i = b; i <= a; i++) {
-                    answer += i;
-                }
             }
-            return answer;
+            return -1;
         }
     }
 
