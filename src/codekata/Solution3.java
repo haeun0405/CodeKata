@@ -272,24 +272,44 @@ class Solution3 {
 //        }
 //    }
     // 콜라츠 추측
-    static class Solution {
-        public int solution(int num) {
-            int maxCount = 500;
-            int i = 0;
-            double tempNum = num;
-            while(i <= 500) {
-                if(tempNum ==1) {
-                    return i;
+//    static class Solution {
+//        public int solution(int num) {
+//            int maxCount = 500;
+//            int i = 0;
+//            double tempNum = num;
+//            while(i <= 500) {
+//                if(tempNum ==1) {
+//                    return i;
+//                }
+//                else if(tempNum%2 == 0) {
+//                    tempNum = tempNum/2;
+//                }else {
+//                    tempNum = tempNum*3 +1;
+//                }
+//                i++;
+//
+//            }
+//            return -1;
+//        }
+//    }
+    // 서울에서 김서방 찾기
+    public static class Solution {
+        public String solution(String[] seoul) {
+            // "Kim"의 위치를 찾기
+            for (int i = 0; i < seoul.length; i++) {
+                if ("Kim".equals(seoul[i])) {
+                    return "김서방은 " + i + "에 있다";
                 }
-                else if(tempNum%2 == 0) {
-                    tempNum = tempNum/2;
-                }else {
-                    tempNum = tempNum*3 +1;
-                }
-                i++;
-
             }
-            return -1;
+            return "Kim이 리스트에 없습니다.";
+        }
+
+        public static void main(String[] args) {
+            Solution sol = new Solution();
+
+            // 테스트
+            String[] seoul = {"Jane", "Kim"};
+            System.out.println(sol.solution(seoul)); // "김서방은 1에 있다"
         }
     }
 
