@@ -1,5 +1,6 @@
 package codekata;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -293,23 +294,53 @@ class Solution3 {
 //        }
 //    }
     // 서울에서 김서방 찾기
+//    public static class Solution {
+//        public String solution(String[] seoul) {
+//            // "Kim"의 위치를 찾기
+//            for (int i = 0; i < seoul.length; i++) {
+//                if ("Kim".equals(seoul[i])) {
+//                    return "김서방은 " + i + "에 있다";
+//                }
+//            }
+//            return "Kim이 리스트에 없습니다.";
+//        }
+//
+//        public static void main(String[] args) {
+//            Solution sol = new Solution();
+//
+//            // 테스트
+//            String[] seoul = {"Jane", "Kim"};
+//            System.out.println(sol.solution(seoul)); // "김서방은 1에 있다"
+//        }
+//    }
+    // 나누어 떨어지는 숫자 배열
     public static class Solution {
-        public String solution(String[] seoul) {
-            // "Kim"의 위치를 찾기
-            for (int i = 0; i < seoul.length; i++) {
-                if ("Kim".equals(seoul[i])) {
-                    return "김서방은 " + i + "에 있다";
+        public int[] solution(int[] arr, int divisor) {
+            ArrayList<Integer> divisible = new ArrayList<>();
+
+            // divisor로 나누어 떨어지는 요소 찾기
+            for (int num : arr) {
+                if (num % divisor == 0) {
+                    divisible.add(num);
                 }
             }
-            return "Kim이 리스트에 없습니다.";
+
+            // 나누어 떨어지는 요소가 없는 경우
+            if (divisible.isEmpty()) {
+                return new int[]{-1};
+            }
+
+            // 결과 배열 생성 및 반환
+            return divisible.stream().sorted().mapToInt(i -> i).toArray();
         }
 
         public static void main(String[] args) {
             Solution sol = new Solution();
 
             // 테스트
-            String[] seoul = {"Jane", "Kim"};
-            System.out.println(sol.solution(seoul)); // "김서방은 1에 있다"
+            System.out.println(Arrays.toString(sol.solution(new int[]{5, 9, 7, 10}, 5))); // [5, 10]
+            System.out.println(Arrays.toString(sol.solution(new int[]{2, 36, 1, 3}, 1)));  // [1, 2, 3, 36]
+            System.out.println(Arrays.toString(sol.solution(new int[]{3, 2, 6}, 10)));     // [-1]
         }
     }
 
