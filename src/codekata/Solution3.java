@@ -314,33 +314,51 @@ class Solution3 {
 //        }
 //    }
     // 나누어 떨어지는 숫자 배열
-    public static class Solution {
-        public int[] solution(int[] arr, int divisor) {
-            ArrayList<Integer> divisible = new ArrayList<>();
+//    public static class Solution {
+//        public int[] solution(int[] arr, int divisor) {
+//            ArrayList<Integer> divisible = new ArrayList<>();
+//
+//            // divisor로 나누어 떨어지는 요소 찾기
+//            for (int num : arr) {
+//                if (num % divisor == 0) {
+//                    divisible.add(num);
+//                }
+//            }
+//
+//            // 나누어 떨어지는 요소가 없는 경우
+//            if (divisible.isEmpty()) {
+//                return new int[]{-1};
+//            }
+//
+//            // 결과 배열 생성 및 반환
+//            return divisible.stream().sorted().mapToInt(i -> i).toArray();
+//        }
+//
+//        public static void main(String[] args) {
+//            Solution sol = new Solution();
+//
+//            // 테스트
+//            System.out.println(Arrays.toString(sol.solution(new int[]{5, 9, 7, 10}, 5))); // [5, 10]
+//            System.out.println(Arrays.toString(sol.solution(new int[]{2, 36, 1, 3}, 1)));  // [1, 2, 3, 36]
+//            System.out.println(Arrays.toString(sol.solution(new int[]{3, 2, 6}, 10)));     // [-1]
+//        }
+//    }
 
-            // divisor로 나누어 떨어지는 요소 찾기
-            for (int num : arr) {
-                if (num % divisor == 0) {
-                    divisible.add(num);
+    // 음양 더하기
+    static class Solution {
+        public int solution(int[] absolutes, boolean[] signs) {
+            int answer = 0;
+            int arrLength = absolutes.length;
+
+            for(int i=0;i<arrLength;i++){
+                if(signs[i]){
+                    answer += absolutes[i];
+                }else{
+                    answer -= absolutes[i];
                 }
             }
 
-            // 나누어 떨어지는 요소가 없는 경우
-            if (divisible.isEmpty()) {
-                return new int[]{-1};
-            }
-
-            // 결과 배열 생성 및 반환
-            return divisible.stream().sorted().mapToInt(i -> i).toArray();
-        }
-
-        public static void main(String[] args) {
-            Solution sol = new Solution();
-
-            // 테스트
-            System.out.println(Arrays.toString(sol.solution(new int[]{5, 9, 7, 10}, 5))); // [5, 10]
-            System.out.println(Arrays.toString(sol.solution(new int[]{2, 36, 1, 3}, 1)));  // [1, 2, 3, 36]
-            System.out.println(Arrays.toString(sol.solution(new int[]{3, 2, 6}, 10)));     // [-1]
+            return answer;
         }
     }
 
