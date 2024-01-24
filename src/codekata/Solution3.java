@@ -345,19 +345,31 @@ class Solution3 {
 //    }
 
     // 음양 더하기
+//    static class Solution {
+//        public int solution(int[] absolutes, boolean[] signs) {
+//            int answer = 0;
+//            int arrLength = absolutes.length;
+//
+//            for(int i=0;i<arrLength;i++){
+//                if(signs[i]){
+//                    answer += absolutes[i];
+//                }else{
+//                    answer -= absolutes[i];
+//                }
+//            }
+//
+//            return answer;
+//        }
+//    }
+    // 핸드폰 번호 가리기
     static class Solution {
-        public int solution(int[] absolutes, boolean[] signs) {
-            int answer = 0;
-            int arrLength = absolutes.length;
-
-            for(int i=0;i<arrLength;i++){
-                if(signs[i]){
-                    answer += absolutes[i];
-                }else{
-                    answer -= absolutes[i];
-                }
+        public String solution(String phone_number) {
+            String answer = "";
+            for(int i=0; i<phone_number.length()-4; i++){
+                answer += "*";
             }
 
+            answer += phone_number.substring(phone_number.length()-4, phone_number.length());
             return answer;
         }
     }
