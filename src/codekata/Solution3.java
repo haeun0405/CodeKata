@@ -362,17 +362,35 @@ class Solution3 {
 //        }
 //    }
     // 핸드폰 번호 가리기
-    static class Solution {
-        public String solution(String phone_number) {
-            String answer = "";
-            for(int i=0; i<phone_number.length()-4; i++){
-                answer += "*";
-            }
+//    static class Solution {
+//        public String solution(String phone_number) {
+//            String answer = "";
+//            for(int i=0; i<phone_number.length()-4; i++){
+//                answer += "*";
+//            }
+//
+//            answer += phone_number.substring(phone_number.length()-4, phone_number.length());
+//            return answer;
+//        }
+//    }
 
-            answer += phone_number.substring(phone_number.length()-4, phone_number.length());
+    // 없는 숫자 더하기
+    static class Solution {
+        public int solution(int[] numbers) {
+            int answer = 0;
+            int[] arr = new int[10];
+            for(int i=0;i<numbers.length;i++){
+                arr[numbers[i]]++;
+            }
+            for(int i=0;i<arr.length;i++){
+                if(arr[i]==0){
+                    answer+=i;
+                }
+            }
             return answer;
         }
     }
+
 
 }
 
